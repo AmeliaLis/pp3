@@ -13,7 +13,8 @@ public class Task15 {
     }
 
     public static double ArithmeticMean(int x, int y) {
-        return (SumOfNumbers(x,y) / (NumberOfItems(x, y) + 0.0));
+        double result = (double) SumOfNumbers(x,y) / NumberOfItems(x, y);
+        return result;
     }
 
     public static void main(String[] args){
