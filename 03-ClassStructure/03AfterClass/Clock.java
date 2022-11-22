@@ -42,13 +42,13 @@ public class Clock {
         String hours="";
         String minutes="";
         if (this.hour < 10) {
-            hours = "0" + String.valueOf(this.hour);
+            hours = "0" + this.hour;
         } else {
             hours = String.valueOf(this.hour);
         }
 
         if (this.minute < 10) {
-            minutes = "0" + String.valueOf(this.minute);
+            minutes = "0" + this.minute;
         } else {
             minutes = String.valueOf(this.minute);
         }
