@@ -1,13 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ShoppingList {
-
-    ArrayList<String> shoppingList;
-
-    ShoppingList(ArrayList<String> shoppingList) {
-        this.shoppingList = shoppingList;
-    }
+public class ShoppingList2 {
+    private ArrayList<String> shoppingList = new ArrayList<>();
 
     public void displaySize() {
         System.out.println("The list contains " + this.shoppingList.size() + " products.");
@@ -36,31 +31,14 @@ public class ShoppingList {
     }
 
     public static void main(String[] args) {
-        ArrayList<String> shoppingList = new ArrayList<>();
-        ShoppingList s1 = new ShoppingList(shoppingList);
-
-        // s1.displaySize();
-        // s1.displayList();
-        // s1.addProduct("Milk");
-        // s1.displaySize();
-        // s1.displayList();
-
-        // s1.addProduct("Eggs");
-        // s1.addProduct("Butter");
-        // s1.addProduct("Water");
-        // s1.displaySize();
-        // s1.displayList();
-
-        s1.addProductFromKeyboard();
-        s1.displayList();
-        s1.displaySize();
-
-        s1.addProductFromKeyboard();
-        s1.addProductFromKeyboard();
-        s1.addProductFromKeyboard();
+        ShoppingList2 s1 = new ShoppingList2();
 
         s1.displayList();
         s1.displaySize();
 
+        s1.addProductFromKeyboard();
+        s1.addProductFromKeyboard();
+        s1.displayList();
+        s1.displaySize();
     }
 }
