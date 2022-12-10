@@ -1,8 +1,12 @@
 import java.util.ArrayList;
 
 public class Library {
-    private ArrayList<Book> shelf = new ArrayList<>();
+    private ArrayList<Book> shelf = new ArrayList<Book>();
 
+    //Library(ArrayList<Book> shelf){
+    //    this.shelf = shelf;
+    //}
+    
     public ArrayList<Book> getShelf() {
         return shelf;
     }
@@ -32,7 +36,7 @@ public class Library {
         Ebook e2 = new Ebook("Ebook nr 2", p1, new Writer("Stasnisław","Leściecki","Dla dzieci"),2005,"Plik 2");
 
 
-        // w przypadku tworzenia relacji agregacji między książką a wydawcą, nie muszę go wstawiać od razu do konstruktora (bo wtedy jest relacja kompozycji)
+        // w przypadku tworzenia relacji agregacji między książką a wydawcą, nie muszę go wstawiać od razu Publisher do konstruktora (bo wtedy jest relacja kompozycji)
         // mogę to zrobić poprzez metodę b1.setPublisher(new Publisher("PWN","Warszawa"));
 
 
@@ -44,5 +48,13 @@ public class Library {
         l1.addBook(e2);
 
         l1.display();
+
+        // lub inna możliwość
+        // private ArrayList<Book> shelf = new ArrayList<Book>();
+        // ArrayList<Book> books = new ArrayList<Book>();
+        // books.add(book1);
+        // books.add(book2);
+        // books.add(book3);
+        // Library library = new Library(books); - wtedy w konstruktorze, jako argument powinno wziąć ArryList<Book>
     }
 }
