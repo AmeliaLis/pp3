@@ -1,10 +1,14 @@
 public class Book{
     private String title;
-    private String author;
+    private Publisher publisher;
+    private int yearOfPublication;
+    private Writer writer;
 
-    Book(String title, String author) {
+    Book(String title, Publisher publisher, Writer writer, int yearOfPublication) {
         this.title = title;
-        this.author = author;
+        this.publisher = publisher;
+        this.writer = writer;
+        this.yearOfPublication = yearOfPublication;
     }
 
     public String getTitle() {
@@ -15,16 +19,35 @@ public class Book{
         this.title = title;
     }
 
-    public String getAuthor() {
-        return author;
+    public Writer getWriter() {
+        return writer;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setWriter(Writer writer) {
+        this.writer = writer;
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
+
+    public int getYearOfPublication() {
+        return yearOfPublication;
+    }
+
+    public void setYearOfPublication(int yearOfPublication) {
+        this.yearOfPublication = yearOfPublication;
     }
 
     public void display(){
         System.out.println("Title: " + getTitle());
-        System.out.println("Author: " + getAuthor());
+        System.out.println("Year of publication: " + getYearOfPublication());
+        System.out.println("Publisher: " + publisher.getNamePublisher() + ", City: " + publisher.getCity());
+        System.out.println("Writer: " + writer.getNameWriter() + " " + writer.getSurnameWriter() + ", Literary genre: " + writer.getLiteraryGenre());
+        
     }
 }

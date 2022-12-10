@@ -23,11 +23,18 @@ public class Library {
     }
 
     public static void main (String[] args){
-        Book b1 = new Book("Ksiazka","Jan Kowalski");
-        Audiobook a1 = new Audiobook("Audiobook nr 1", "Teresa Nowak", 75, 32);
-        Audiobook a2 = new Audiobook("Audiobook nr 2", "Teresa Kowalska", 57, 23);
-        Ebook e1 = new Ebook("Ebook nr 1", "Natalia Wróbel", "Plik 1");
-        Ebook e2 = new Ebook("Ebook nr 2", "Natalia Lis", "Plik 2");
+        Publisher p1 = new Publisher("PWN", "Warszawa");
+
+        Book b1 = new Book("Ksiazka", new Publisher("Wydawnictwo 1", "Rzeszów"), new Writer("Amelia","Lis","kryminał"),2018);
+        Audiobook a1 = new Audiobook("Audiobook nr 1", p1, new Writer("J.K.", "Rowling", "Fantastyka"), 1997, 75, 32);
+        Audiobook a2 = new Audiobook("Audiobook nr 2", p1, new Writer("Karolina", "Kowalska", "Biografia"),1985, 57, 23);
+        Ebook e1 = new Ebook("Ebook nr 1", p1, new Writer("Jan","Kowalski","Science-fiction"), 2001, "Plik 1");
+        Ebook e2 = new Ebook("Ebook nr 2", p1, new Writer("Stasnisław","Leściecki","Dla dzieci"),2005,"Plik 2");
+
+
+        // w przypadku tworzenia relacji agregacji między książką a wydawcą, nie muszę go wstawiać od razu do konstruktora (bo wtedy jest relacja kompozycji)
+        // mogę to zrobić poprzez metodę b1.setPublisher(new Publisher("PWN","Warszawa"));
+
 
         Library l1 = new Library();
         l1.addBook(b1);
