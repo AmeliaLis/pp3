@@ -5,6 +5,9 @@ public class SuperCounter extends Counter {
     }
     
     public void addN(int n){
+        //gdyby counter mial ustawiony atrybut na protected, to rozwiazanie by zadzialalo
+        //int currentCounter = super.getCounter();
+        //super.counter = currentCounter+n;
         int i=0;
         while(i<n) {
             add1();
