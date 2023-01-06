@@ -1,11 +1,40 @@
+import java.util.Arrays;
 public class TV implements CanOnOff, CanChangeChannel, CanChangeVolume {
     private boolean isTurnedOn = false;
     private int channelNumber = 1;
     private int volumeLevel = 1;
+    private String names [] = new String[99];
+
+    public void displayProgramms(){
+        names[0] ="tvp1";
+        names[1] ="tvp2";
+        names[2] ="tvp3";
+        names[3] ="polsat";
+        names[4] ="tvn";
+        names[5] ="tv4";
+        names[6] ="tv puls";
+        names[7] ="tvp sport";
+        names[8] ="eurosport";
+        names[9] ="polsat sport";
+        names[10] ="tvp historia";
+
+        if (getIsTurnedOn() == true) {
+            System.out.println("Available channels: ");
+            for (String channel : this.names) {
+                if (channel != null){
+                    System.out.println(Arrays.asList(names).indexOf(channel)+1 + ": " + channel);
+                }
+            }
+        }        
+    }
+
+    public String getChannelName(int n) {
+        return names[n];
+    }
 
     public void displayStatus(){
         if (getIsTurnedOn() == true) {
-            System.out.println("TV is turned on. Channel: " + getChannelNumber() + ". Volume: " +getVolumeLevel());
+            System.out.println("TV is turned on. Channel: " + getChannelNumber() + " " + getChannelName(getChannelNumber()-1) + ". Volume: " +getVolumeLevel());
         } else {
             System.out.println("TV is turned off.");
         }

@@ -18,18 +18,24 @@ public class Main {
         t1.displayStatus();
         */
         t1.on();
+        t1.displayProgramms();
         t1.displayStatus();
         t1.setChannel(15);
         t1.displayStatus();
         t1.volumeUp();
         t1.volumeUp();
         t1.volumeUp();
+        t1.setChannel(8);
+        t1.displayStatus();
         t1.volumeUp();
         t1.volumeUp();
+        t1.setChannel(2);
+        t1.displayStatus();
         t1.volumeUp();
+        t1.setChannel(11);
         t1.displayStatus();
         t1.off();
         t1.displayStatus();
-        
+        t1.displayProgramms();
     }
 }
